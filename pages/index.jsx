@@ -1,4 +1,3 @@
-import { FC, ReactPropTypes } from 'react';
 import Head from 'next/head';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
@@ -9,11 +8,8 @@ import UserCard from '../components/Card';
 import UserCarousel from '../components/Courcel';
 import NavMenu from '../components/Nav';
 import { User } from '../types/types';
-import { AppStore } from '../store/store';
 
-type Props = { users: User[] };
-
-const Home: FC<Props> = ({ users }) => {
+const Home = ({ users }) => {
   // let users = props.users;
   return (
     <Container
@@ -46,19 +42,17 @@ const Home: FC<Props> = ({ users }) => {
   );
 };
 
-export const getStaticProps = wrapper.getStaticProps(
-  (store: AppStore) => async () => {
-    const res = await fetch('https://jsonplaceholder.typicode.com/users');
-    const users = await res.json();
-    store.dispatch(addUser(users));
+export const getStaticProps = wrapper.getStaticProps((store) => async () => {
+  const res = await fetch('https://jsonplaceholder.typicode.com/users');
+  const users = await res.json();
+  store.dispatch(addUser(users));
 
-    return {
-      props: {
-        users,
-      },
-      // revalidate: 10, // In seconds
-    };
-  }
-);
+  return {
+    props: {
+      users,
+    },
+    // revalidate: 10, // In seconds
+  };
+});
 
 export default Home;

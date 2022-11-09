@@ -1,8 +1,7 @@
-import { FC, ReactPropTypes } from 'react';
 import Container from 'react-bootstrap/Container';
 import NavMeun from '../components/Nav';
 
-const Other: FC<ReactPropTypes> = (props) => {
+const Other = () => {
   return (
     <Container fluid>
       <NavMeun />
