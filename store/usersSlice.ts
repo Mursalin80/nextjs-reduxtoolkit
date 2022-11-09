@@ -1,4 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { AppState } from './store';
+import { User } from '../types/types';
 
 const initialState = {
   users: [],
@@ -9,7 +11,7 @@ export const usersSlice = createSlice({
   name: 'users',
   initialState,
   reducers: {
-    addUser: (state, action) => {
+    addUser: (state: AppState, action) => {
       state.users = [...state.users, ...action.payload];
     },
   },

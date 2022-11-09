@@ -1,6 +1,5 @@
 import React from 'react';
 import Link from 'next/link';
-import Container from 'react-bootstrap/Container';
 
 const NavBar = () => {
   return (
@@ -16,12 +15,12 @@ const NavBar = () => {
           </Link>
         </li>
         <li className="nav-item ">
-          <Link className="nav-link text-white" href="users">
+          <Link className="nav-link text-white" href="/users">
             Users
           </Link>
         </li>
         <li className="nav-item">
-          <Link className="nav-link text-white" href="about">
+          <Link className="nav-link text-white" href="/about">
             About
           </Link>
         </li>

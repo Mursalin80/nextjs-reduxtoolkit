@@ -29,7 +29,7 @@ export default function Home({ posts }) {
         }}
       >
         {posts.map((p) => (
-          <div style={{ width: '30%' }}>
+          <div style={{ width: '30%' }} key={p.id}>
             <Card className="text-center m-2">
               <Card.Header>{`Post-ID ${p.id}`}</Card.Header>
               <Card.Body>
