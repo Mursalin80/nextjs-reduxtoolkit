@@ -1,10 +1,8 @@
-import Link from 'next/link';
 import Container from 'react-bootstrap/Container';
 import { useSelector } from 'react-redux';
 import Card from 'react-bootstrap/Card';
 import { BsSignpost2Fill } from 'react-icons/bs';
 import { useRouter } from 'next/router';
-import E404 from '../404';
 
 import UserCard from '../../components/Card';
 import NavBar from '../../components/Nav';
@@ -32,16 +30,9 @@ export default function Home({ posts }) {
         </h1>
       </div>
 
-      <div
-        style={{
-          display: 'flex',
-          margin: '5px auto',
-          flexDirection: 'row',
-          flexWrap: 'wrap',
-        }}
-      >
+      <div className="d-flex flex-row flex-wrap justify-content-center ">
         {posts.map((p) => (
-          <div style={{ width: '30%' }} key={p.id}>
+          <div className="w-25" key={p.id}>
             <Card className="text-center m-2">
               <Card.Header>{`Post-ID ${p.id}`}</Card.Header>
               <Card.Body>

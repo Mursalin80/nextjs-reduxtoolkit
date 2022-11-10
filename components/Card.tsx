@@ -4,21 +4,19 @@ import { User } from '../types/types';
 import {
   FaMailBulk,
   FaPhoneAlt,
-  FaAddressCard,
   FaCity,
   FaUserAlt,
   FaBattleNet,
 } from 'react-icons/fa';
 import { GiStreetLight } from 'react-icons/gi';
+import { AiFillEnvironment } from 'react-icons/ai';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import sty from './card.module.css';
 
 function UserCard({ user, fetPost }: { user: User; fetPost: boolean }) {
-  // console.log('Log: ', user.name);
-
   return (
-    <Card>
+    <Card className="p-2">
       <Card.Header>
         <Card.Title>
           <FaUserAlt className={sty.m_icon} />
@@ -34,7 +32,7 @@ function UserCard({ user, fetPost }: { user: User; fetPost: boolean }) {
           {user.website}
         </Card.Text>
         <Card.Title>
-          <FaAddressCard className={sty.xxl_icon} />
+          <AiFillEnvironment className={sty.xxl_icon} />
         </Card.Title>
         <Card.Text>
           <FaCity className={sty.m_icon} /> {user.address.city} <br />

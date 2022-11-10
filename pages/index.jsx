@@ -7,37 +7,25 @@ import { addUser } from '../store/usersSlice';
 import UserCard from '../components/Card';
 import UserCarousel from '../components/Courcel';
 import NavMenu from '../components/Nav';
-import { User } from '../types/types';
 
 const Home = ({ users }) => {
-  // let users = props.users;
   return (
-    <Container
-      fluid
-      style={{
-        display: 'flex',
-        margin: '0',
-        flexWrap: 'wrap',
-      }}
-    >
+    <Container fluid>
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <NavMenu />
-      <div
-        style={{
-          height: '65vh',
-        }}
-      >
+      <div>
         <UserCarousel />
       </div>
-
-      {users.map((user) => (
-        <div key={user.id} style={{ margin: '5px', paddingLeft: '5px' }}>
-          <UserCard user={user} fetPost={false} />
-        </div>
-      ))}
+      <div className="d-flex flex-wrap justify-content-center ">
+        {users.map((user) => (
+          <div key={user.id} className="m-1">
+            <UserCard user={user} fetPost={false} />
+          </div>
+        ))}
+      </div>
     </Container>
   );
 };

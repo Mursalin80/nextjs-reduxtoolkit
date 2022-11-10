@@ -3,14 +3,10 @@ import Link from 'next/link';
 
 const NavBar = () => {
   return (
-    <div className=" w-100 " style={{ backgroundColor: '#3F51B5' }}>
+    <div className=" w-100 bg-secondary">
       <ul className="nav justify-content-end ">
         <li className="nav-item ">
-          <Link
-            className="nav-link active text-white"
-            aria-current="page"
-            href="/"
-          >
+          <Link className="nav-link active text-white" href="/">
             Home
           </Link>
         </li>
