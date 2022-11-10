@@ -12,21 +12,11 @@ export default function Users() {
   return (
     <Container fluid>
       <NavMenu />
-      <h1 className="display-1">All Userd</h1>
+      <h1 className="display-1 d-flex justify-content-center">All Userd</h1>
 
-      <div
-        style={{
-          display: 'flex',
-          margin: '5px auto',
-          flexDirection: 'row',
-          flexWrap: 'wrap',
-        }}
-      >
+      <div className="d-flex flex-row flex-wrap m-1 justify-content-center">
         {users.map((user) => (
-          <div
-            key={user.id}
-            style={{ margin: '5px', paddingLeft: '5px', width: '30%' }}
-          >
+          <div key={user.id} className="m-2 w-25 pr-3">
             <UserCard user={user} fetPost={true} />
           </div>
         ))}

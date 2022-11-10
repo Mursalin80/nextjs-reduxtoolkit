@@ -1,9 +1,8 @@
 import '../styles/globals.css';
-import type { AppProps } from 'next/app';
 import SSRProvider from 'react-bootstrap/SSRProvider';
-import {wrapper} from "../store/store";
+import { wrapper } from '../store/store';
 
- function App({ Component, pageProps }: AppProps) {
+function App({ Component, pageProps }) {
   return (
     <SSRProvider>
       <Component {...pageProps} />

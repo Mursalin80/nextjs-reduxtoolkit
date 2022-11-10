@@ -1,6 +1,5 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { HYDRATE, createWrapper } from 'next-redux-wrapper';
-import { Action } from 'redux';
 import users from './usersSlice';
 import counter from './counterSlice';
 
@@ -31,12 +30,11 @@ export const makeStore = () =>
   });
 
 // ** Types **
-export type AppStore = ReturnType<typeof makeStore>;
-export type AppState = ReturnType<AppStore['getState']>;
+// export type AppStore = ReturnType<typeof makeStore>;
+// export type AppState = ReturnType<AppStore['getState']>;
 
 // ** Selectors **
-export const selectAllUsers = (state: AppState) => state.users.users;
-export const userById = (users: [{}], id: number) =>
-  users.filter((u: any) => u.id === id);
+export const selectAllUsers = (state) => state.users.users;
+export const userById = (users, id) => users.filter((u) => u.id === id);
 
-export const wrapper = createWrapper<AppStore>(makeStore, { debug: true });
+export const wrapper = createWrapper(makeStore, { debug: true });
