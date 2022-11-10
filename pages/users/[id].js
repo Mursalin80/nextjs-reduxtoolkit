@@ -1,35 +1,38 @@
-import Link from 'next/link';
 import Container from 'react-bootstrap/Container';
 import { useSelector } from 'react-redux';
-import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import { BsSignpost2Fill } from 'react-icons/bs';
+import { useRouter } from 'next/router';
 
 import UserCard from '../../components/Card';
 import NavBar from '../../components/Nav';
+
 import { selectAllUsers, userById } from '../../store/store';
 
 export default function Home({ posts }) {
   let users = useSelector(selectAllUsers);
   let user = userById(users, 1)[0];
+  let router = useRouter();
+
+  if (posts.length < 1) {
+    router.push('/404');
+    return;
+  }
 
   return (
     <Container fluid>
       <NavBar />
+      <div style={{ margin: '10px' }}>
+        <UserCard user={user} />
+        <h1 className="display-1 ">
+          <BsSignpost2Fill />
+          All Posts
+        </h1>
+      </div>
 
-      <UserCard user={user} />
-      <h1 className="display-1 ">All Posts </h1>
-
-      <div></div>
-      <div
-        style={{
-          display: 'flex',
-          margin: '5px auto',
-          flexDirection: 'row',
-          flexWrap: 'wrap',
-        }}
-      >
+      <div className="d-flex flex-row flex-wrap justify-content-center ">
         {posts.map((p) => (
-          <div style={{ width: '30%' }} key={p.id}>
+          <div className="w-25" key={p.id}>
             <Card className="text-center m-2">
               <Card.Header>{`Post-ID ${p.id}`}</Card.Header>
               <Card.Body>

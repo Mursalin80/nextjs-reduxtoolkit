@@ -22,8 +22,8 @@ export default function Clock() {
       <button onClick={addNewUser}>Add</button>
       <h4>User List:</h4>
       <ol>
-        {users.map((user) => (
-          <li>{user}</li>
+        {users.map((user, i) => (
+          <li key={i}>{user}</li>
         ))}
       </ol>
     </div>
