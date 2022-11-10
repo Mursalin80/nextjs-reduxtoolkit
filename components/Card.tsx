@@ -12,7 +12,7 @@ import { GiStreetLight } from 'react-icons/gi';
 import { AiFillEnvironment } from 'react-icons/ai';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import sty from './card.module.css';
+import sty from './Card.module.css';
 
 function UserCard({ user, fetPost }: { user: User; fetPost: boolean }) {
   return (

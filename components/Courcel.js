@@ -1,5 +1,5 @@
 import Carousel from 'react-bootstrap/Carousel';
-import styles from './courcel.module.css';
+import styles from './Courcel.module.css';
 
 function UserCarousel() {
   return (
